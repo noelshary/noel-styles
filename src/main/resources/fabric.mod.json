@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "id": "neolonistyles",
+  "version": "${version}",
+  "name": "Neoloni Styles",
+  "description": "Eigenes Style-Menü (Taste K). Komplett offline: kein Updater, keine Statistik, kein Netzwerk.",
+  "license": "All-Rights-Reserved",
+  "environment": "client",
+  "entrypoints": { "client": ["de.neoloni.styles.NeoloniStyles"] },
+  "depends": { "fabricloader": ">=0.16.0", "minecraft": "~1.21.11", "java": ">=21", "fabric-api": "*" }
+}
