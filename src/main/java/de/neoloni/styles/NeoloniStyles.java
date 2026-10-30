@@ -171,7 +171,7 @@ public class NeoloniStyles implements ClientModInitializer {
         new Style("Inventar", "Gold 5", "v2_inventory_05"),
         new Style("Inventar", "Frost 6", "v2_inventory_06"),
         new Style("Inventar", "Nacht 7", "v2_inventory_07"),
-        new Style("Inventar", "Rosa 8", "v2_inventory_08"),
+        new Style("Inventar", "Rosa 8", "v2_inventory_08")
     );
     private static KeyBinding openMenu;
     @Override public void onInitializeClient() {
