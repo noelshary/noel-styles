@@ -1,32 +1,35 @@
-name: Build Neoloni Styles
+name: Build Neoloni Styles 2.0
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Java 21
+      - name: Set up Java 21
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 21
-
-      - name: Setup Gradle
+          java-version: '21'
+      - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
-
-      - name: Build Mod
-        run: gradle build
-
-      - name: Upload JAR
+        with:
+          gradle-version: '9.2.1'
+      - name: Build mod
+        run: gradle --no-daemon clean build
+      - name: Upload mod JAR and sources
         uses: actions/upload-artifact@v4
         with:
-          name: Neoloni-Styles
-          path: build/libs/*.jar
+          name: Neoloni-Styles-2.0.0
+          path: |
+            build/libs/*.jar
+          if-no-files-found: error
+          retention-days: 14
